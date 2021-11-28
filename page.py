@@ -1,9 +1,12 @@
+import os
+
 from pdfminer.high_level import extract_pages
 from pdfminer.layout import LTTextContainer, LTChar
-from utils import *
+from util import *
 
+script_dir = os.path.dirname(__file__)
 
-tmp = open('tmp\matra.txt', 'w', encoding='utf-8')
+tmp = open(os.path.join(script_dir, 'tmp/matra.txt'), 'w', encoding='utf-8')
 tmp.write(str(allMatra))
 tmp.close()
 
@@ -35,7 +38,7 @@ class Pages:
         wrt = True
         prt = False
         if wrt:
-            f = open('tmp\gandhi.txt', 'w', encoding='utf-8')
+            f = open(os.path.join(script_dir, 'tmp/gandhi.txt'), 'w', encoding='utf-8')
         s = ''
         for para in self.paras:
             for char in para:
@@ -52,8 +55,8 @@ class Pages:
         f.write(s)
         f.close()
 
-uri = "data/gandhi-autobiography-hindi.pdf"
 uri = 'data/Munshi Premchand - गोदान Godan-Maple Press (2014).pdf'
+uri = "data/gandhi-autobiography-hindi.pdf"
 
 def fn():
     pages = []
