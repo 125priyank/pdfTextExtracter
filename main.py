@@ -5,7 +5,7 @@ from functools import cmp_to_key
 allMatra = {'ं', 'र्', 'ँ', 'ं', 'ः', 'ऺ', 'ऻ', '़', 'ऽ', 'ा', 'ि', 'ी', 'ु', 'ू', 'ृ', 'ॄ', 'ॅ', 'ॆ', 'े', 'ै', 'ॉ', 'ॊ', 'ो', 'ौ', '्', 'ॎ', 'ॏ', 'ॐ', '॑', '॒', '॓', '॔', 'ॕ', 'ॖ', 'ॗ', 'ॢ', 'ॣ', 'ঁ'}
 bottomMatra = {'्', 'ू', 'ु', 'ृ', 'ॄ'}
 upMatra = {'ॅ', 'ॆ', 'े', 'ै', 'ऺ'}
-tmp = open('G:\coding\o2.txt', 'w', encoding='utf-8')
+tmp = open('tmp\matra.txt', 'w', encoding='utf-8')
 tmp.write(str(allMatra))
 tmp.close()
 
@@ -16,11 +16,11 @@ class Pages:
     def preprocess(self):
         for i in range(len(self.pages)):
             self.pages[i] = list(dict(sorted(ydict.items(), reverse=True)).values())
-a = extract_pages("C:/Users/Terminator/Downloads/gandhi-autobiography-hindi.pdf", page_numbers=[0,1])
+a = extract_pages("data/gandhi-autobiography-hindi.pdf", page_numbers=[0,1])
 print(type(a))
 def fn():
     pages = []
-    for page_layout in extract_pages("C:/Users/Terminator/Downloads/gandhi-autobiography-hindi.pdf", page_numbers=[0,1]):
+    for page_layout in extract_pages("data/gandhi-autobiography-hindi.pdf", page_numbers=[0,1]):
         ydict = {}
         for element in page_layout:
             if isinstance(element, LTTextContainer):
@@ -166,7 +166,7 @@ para = txtCorrector(para)
 wrt = True
 prt = False
 if wrt:
-    f = open('G:\coding\o1.txt', 'w', encoding='utf-8')
+    f = open('data\gandhi.txt', 'w', encoding='utf-8')
 s = ''
 for char in para:
     if char['text']=='dnp':

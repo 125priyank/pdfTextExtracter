@@ -3,7 +3,7 @@ from pdfminer.layout import LTTextContainer, LTChar
 from utils import *
 
 
-tmp = open('G:\coding\o2.txt', 'w', encoding='utf-8')
+tmp = open('tmp\matra.txt', 'w', encoding='utf-8')
 tmp.write(str(allMatra))
 tmp.close()
 
@@ -35,7 +35,7 @@ class Pages:
         wrt = True
         prt = False
         if wrt:
-            f = open('G:\coding\o1.txt', 'w', encoding='utf-8')
+            f = open('tmp\gandhi.txt', 'w', encoding='utf-8')
         s = ''
         for para in self.paras:
             for char in para:
@@ -52,8 +52,8 @@ class Pages:
         f.write(s)
         f.close()
 
-uri = "C:/Users/Terminator/Downloads/gandhi-autobiography-hindi.pdf"
-uri = 'C:/Users/Terminator/Downloads/Munshi Premchand - गोदान Godan-Maple Press (2014).pdf'
+uri = "data/gandhi-autobiography-hindi.pdf"
+uri = 'data/Munshi Premchand - गोदान Godan-Maple Press (2014).pdf'
 
 def fn():
     pages = []
